@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Flutter Material Design Colors */
+  --flutter-blue: #2196F3;
+  --flutter-blue-dark: #1976D2;
+  --flutter-blue-light: #BBDEFB;
+  --flutter-blue-50: #E3F2FD;
+  --flutter-accent: #03DAC6;
+  --flutter-surface: #FFFFFF;
+  --flutter-background: #FAFAFA;
+  --flutter-error: #F44336;
+  --flutter-success: #4CAF50;
+  --flutter-warning: #FF9800;
+  --flutter-text-primary: #212121;
+  --flutter-text-secondary: #757575;
+  --flutter-divider: #E0E0E0;
+  
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Material Design Elevation Shadows */
+.elevation-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.elevation-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.elevation-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.elevation-4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+/* Material Design Button Styles */
+.btn-material {
+  @apply px-6 py-3 rounded-lg font-medium transition-all duration-200 transform;
+}
+
+.btn-material:hover {
+  @apply scale-105;
+}
+
+.btn-material:active {
+  @apply scale-95;
+}
+
+.btn-primary {
+  background-color: var(--flutter-blue);
+  @apply text-white;
+}
+
+.btn-primary:hover {
+  background-color: var(--flutter-blue-dark);
+}
+
+.btn-secondary {
+  background-color: var(--flutter-blue-light);
+  color: var(--flutter-blue-dark);
+}
+
+.btn-secondary:hover {
+  background-color: var(--flutter-blue-50);
+}
+
+.btn-danger {
+  background-color: #dc2626;
+  color: white;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.1);
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+  box-shadow: 0 4px 16px rgba(220, 38, 38, 0.15);
+}
+
+/* Material Design Card Styles */
+.card-material {
+  @apply bg-white rounded-xl;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.1);
+  border: 1px solid var(--flutter-divider);
+}
+
+.card-material:hover {
+  box-shadow: 0 4px 16px rgba(33, 150, 243, 0.15);
+  @apply transform -translate-y-1;
+  transition: all 0.3s ease;
+}
+
+/* Flutter-inspired Background */
+body {
+  background: linear-gradient(135deg, var(--flutter-background) 0%, var(--flutter-blue-50) 100%);
+  min-height: 100vh;
+  color: var(--flutter-text-primary);
+}
+
+/* Material Design Input Styles */
+.input-material {
+  @apply border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-blue-500 focus:outline-none transition-colors;
+  background-color: var(--flutter-surface);
+}
+
+.input-material:focus {
+  border-color: var(--flutter-blue);
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+/* Material Design Typography */
+.text-headline {
+  @apply text-2xl font-bold;
+  color: var(--flutter-text-primary);
+}
+
+.text-title {
+  @apply text-xl font-semibold;
+  color: var(--flutter-text-primary);
+}
+
+.text-body {
+  @apply text-base;
+  color: var(--flutter-text-primary);
+}
+
+.text-caption {
+  @apply text-sm;
+  color: var(--flutter-text-secondary);
+}
+
+/* Progress Bar Material Design */
+.progress-material {
+  @apply w-full bg-gray-200 rounded-full h-2;
+  background-color: var(--flutter-blue-50);
+}
+
+.progress-material .progress-bar {
+  @apply h-2 rounded-full transition-all duration-300;
+  background: linear-gradient(90deg, var(--flutter-blue) 0%, var(--flutter-accent) 100%);
+}
+
+/* Ripple Effect */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.ripple:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--flutter-blue-50);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--flutter-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--flutter-blue-dark);
+}
